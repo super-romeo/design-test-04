@@ -131,16 +131,23 @@ select { width: 100%; min-width: 0; min-height: 52px; padding: 0 1rem; font: inh
 
 
 
-/* ===== Background 04: Dark first screen and footer ===== */
-main > section:first-of-type { --band: #0d2247; --ink: #ffffff; --steel: #c3cee2; --line: rgba(255,255,255,.18); --border: rgba(255,255,255,.16);
+/* ===== Background 06: Grey alternating + dark form block and footer ===== */
+#wat, #opis { --band: #eef2f7; box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); background: var(--band); border-top-color: transparent; }
+#wat + section, #opis + section { border-top-color: transparent; }
+#start { --band: #0d2247; --ink: #ffffff; --steel: #c3cee2; --line: rgba(255,255,255,.18); --border: rgba(255,255,255,.16);
   --surface: #17315f; --accent-wash: rgba(255,255,255,.12); --focus: #9dbcf5; color: var(--ink); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); background: var(--band); border-top-color: transparent; }
-main > section:first-of-type .button:not(.quiet) { background: #fff; border-color: #fff; color: #12397a; }
-main > section:first-of-type .button.quiet { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
-main > section:first-of-type select { background-color: #17315f; color: #fff; border-color: rgba(255,255,255,.3); }
-main > section:first-of-type + section { border-top-color: transparent; }
+#start .button:not(.quiet) { background: #fff; border-color: #fff; color: #12397a; }
+#start .button.quiet { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+#start select { background-color: #17315f; color: #fff; border-color: rgba(255,255,255,.3); }
+#start + section { border-top-color: transparent; }
 footer { background: #0d2247; color: #fff; border-top: 0; --ink: #fff; --steel: #c3cee2; }
 footer a, footer p { color: #fff; }
-header { background: rgba(13,34,71,.9); border-bottom-color: rgba(255,255,255,.14); }
-header a { color: #c3cee2; }
-header .home, header a:hover { color: #fff; }
-header a:hover { background: rgba(255,255,255,.1); }
+
+/* ===== v2 fixes after jury: form card light inside the dark block; footer separated from the form block ===== */
+#start .tile { --ink: #0a1524; --steel: #566174; --line: #dde2ea; --border: #dde2ea; --surface: #ffffff; --focus: #2f6fd6; background: #ffffff; color: #0a1524; border-color: transparent; }
+#start .tile select { background-color: #ffffff; color: #0a1524; border-color: #b9c3d2; }
+#start .tile .button:not(.quiet) { background: #12397a; border-color: #12397a; color: #ffffff; }
+footer { background: #081833; border-top: 1px solid rgba(255,255,255,.14); }
+/* ===== Shape 04: Square corners ===== */
+:root { --radius-card: 0; --radius-inner: 0; --radius-field: 0; --radius-pill: 0; }
+header a { border-radius: var(--radius-field); }
