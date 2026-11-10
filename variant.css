@@ -152,11 +152,19 @@ footer { background: #081833; border-top: 1px solid rgba(255,255,255,.14); }
 :root { --radius-card: 1rem; --radius-inner: .75rem; --radius-field: .625rem; --radius-pill: .625rem; }
 header a { border-radius: var(--radius-field); }
 
-/* ===== Cards 04: List of rows: picture left, text right ===== */
+/* ===== Cards 05: Grid 2x2, picture on the side ===== */
 .art { height: auto; aspect-ratio: 4 / 3; }
 @media (min-width: 768px) {
-.bento > *, .bento > .wide { grid-column: 1 / -1; }
-#wat .tile { display: grid; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); column-gap: 2rem; align-items: center; }
+.bento > *, .bento > .wide { grid-column: span 6; }
+#wat .tile { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); column-gap: 1.5rem; align-items: center; }
 #wat .tile .art { grid-row: 1 / span 3; }
 #wat .tile > :not(.art) { grid-column: 2; }
+#wat .tile { padding: 1.5rem; }
 }
+
+/* ===== Hero 04: Centred text, wide picture below ===== */
+main > section:first-of-type { --cols: minmax(0, 1fr); text-align: center; }
+main > section:first-of-type > .stack { justify-items: center; }
+main > section:first-of-type > .stack p { margin-inline: auto; }
+main > section:first-of-type > .shot { width: 100%; max-width: 60rem; margin-inline: auto; }
+main > section:first-of-type .facts { text-align: center; }
