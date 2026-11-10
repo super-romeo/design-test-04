@@ -177,6 +177,10 @@ header a { border-radius: var(--radius-field); }
 /* ===== Header 04: Dark header with a white button ===== */
 header nav a:last-child { background: var(--accent); color: #fff; padding: 0 1rem; margin-left: .5rem; font-weight: 600; }
 header nav a:last-child:hover { background: var(--accent); color: #fff; opacity: .92; }
+@media (max-width: 767px) {
+header .shell { position: relative; }
+header nav a:last-child { position: absolute; top: 10px; right: var(--gutter); margin: 0; }
+}
 header { background: #0d2247; border-bottom-color: transparent; backdrop-filter: none; }
 header a { color: #c3cee2; }
 header .home { color: #fff; }
