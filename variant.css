@@ -169,7 +169,16 @@ header a { border-radius: var(--radius-field); }
   background: radial-gradient(circle at 16px 15px, #b9c3d2 4px, transparent 5px), radial-gradient(circle at 32px 15px, #b9c3d2 4px, transparent 5px),
     radial-gradient(circle at 48px 15px, #b9c3d2 4px, transparent 5px), #e9edf3; }
 .window .shot { border: 0; border-radius: 0; box-shadow: none; }
-/* ===== Density 04: Airy: larger gaps between blocks ===== */
+/* ===== Density 02: Compact: smaller gaps between blocks ===== */
 @media (min-width: 768px) {
-:root { --section: 8.5rem; }
+:root { --section: 4rem; --gap: clamp(1.5rem, 3.5vw, 3.5rem); --pad-card: 1.75rem; }
 }
+
+/* ===== Header 04: Dark header with a white button ===== */
+header nav a:last-child { background: var(--accent); color: #fff; padding: 0 1rem; margin-left: .5rem; font-weight: 600; }
+header nav a:last-child:hover { background: var(--accent); color: #fff; opacity: .92; }
+header { background: #0d2247; border-bottom-color: transparent; backdrop-filter: none; }
+header a { color: #c3cee2; }
+header .home { color: #fff; }
+header a:hover { color: #fff; background: rgba(255,255,255,.1); }
+header nav a:last-child, header nav a:last-child:hover { background: #fff; color: #12397a; opacity: 1; }
