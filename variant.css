@@ -192,3 +192,37 @@ footer a, footer p { color: #0a1524; }
 }
 /* ===== Motion 04: Load cascade only, no reveal on scroll, static dot ===== */
 .reveal, .dot, .skel { animation: none !important; }
+
+/* ===== Commands 04: Impeccable: bolder ===== */
+/* ===== command: bolder =====
+   One move, made completely: the navy accent and the heavy ink rule (both already owned by the system) carry the
+   hierarchy; body copy, card text and borders stay as quiet as they were. No new hue, font, radius or shadow type. */
+:root {
+  --text-h2: clamp(2rem, 3.6vw, 2.75rem);       /* was clamp(1.75rem, 3vw, 2.5rem) */
+  --text-h3: 1.375rem;                          /* was 1.25rem */
+  --tracking: -.035em;                          /* was -.025em */
+  --leading-tight: 1.06;                        /* was 1.1 — pays for the taller facts strip in the first screen */
+  --text-fact: clamp(1.0625rem, 1.6vw, 1.25rem);
+  --rule: 2px solid var(--ink);                 /* the heavy rule: facts strip and question list */
+}
+/* accent takes the second half of the headline and the eyebrow labels (was steel) */
+.soft, .stack > .meta:first-child { color: var(--accent); }
+.stack > .meta:first-child { font-weight: 600; }
+/* facts strip: heavy ink rule on top, values at near-heading size */
+.facts { border-top: var(--rule); }
+.facts dd { font-size: var(--text-fact); line-height: 1.25; letter-spacing: -.015em; }
+/* the same rule opens the question list; question rows separated by full-strength lines */
+.stack + .rows { margin-top: 1.25rem; border-top: var(--rule); }
+.rows > * { padding: 1.25rem 0; }
+/* window frame: navy title bar with wash dots, navy edge, deeper drop */
+.window { border-color: var(--accent); box-shadow: 0 30px 56px -24px rgba(10, 21, 36, .45), 0 2px 6px rgba(10, 21, 36, .08); }
+.window::before { border-bottom-color: var(--accent);
+  background: radial-gradient(circle at 16px 15px, var(--accent-wash) 4px, transparent 5px), radial-gradient(circle at 32px 15px, var(--accent-wash) 4px, transparent 5px),
+    radial-gradient(circle at 48px 15px, var(--accent-wash) 4px, transparent 5px), var(--accent); }
+/* primary button: larger target and label; quiet button speaks in the accent */
+.button:not(.quiet) { min-height: 56px; padding: 0 1.75rem; font-size: 1.0625rem; }
+.button.quiet { color: var(--accent); font-weight: 600; }
+/* the dark form band is the second peak: its heading at display size */
+#start h2 { font-size: var(--text-display); }
+header .home { font-size: 1.125rem; letter-spacing: -.015em; }
+
